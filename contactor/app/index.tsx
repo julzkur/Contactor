@@ -1,4 +1,4 @@
-import { ContactListView } from "./views/ContactList";
+import { ContactListView } from "./Views/ContactList";
 
 export default function Index() {
     return (
