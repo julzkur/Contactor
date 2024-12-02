@@ -8,18 +8,18 @@ interface ContactCardProps {
 }
 
 const ContactCard: React.FC<ContactCardProps> = ({ contact }) => {
-  return (
-    <View style={styles.contactItem}>
-      <Image
-        source={{ uri: contact.thumbnail }}
-        style={styles.thumbnail}
-      />
-      <View style={styles.contactDetails}>
-        <Text style={styles.name}>{contact.name}</Text>
-        <Text style={styles.phoneNumber}>{contact.phoneNumber}</Text>
-      </View>
-    </View>
-  );
+    return (
+        <View style={styles.contactItem}>
+            <Image
+            source={{ uri: contact.thumbnail }}
+            style={styles.thumbnail}
+            />
+            <View style={styles.contactDetails}>
+                <Text style={styles.name}>{contact.name}</Text>
+                <Text style={styles.phoneNumber}>{contact.phoneNumber}</Text>
+            </View>
+        </View>
+    );
 };
 
 export default ContactCard;
