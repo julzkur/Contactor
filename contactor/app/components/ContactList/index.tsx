@@ -6,16 +6,16 @@ import Header from "../Header";
 import { styles } from "./styles";
 
 const DisplayContactList = () => {
-    return (
-        <View style={styles.container}>
-            <Header title="Contacts" />
-            <FlatList
-                data={dummyContacts}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <ContactCard contact={item} />}
-            />
-        </View>
-    );
-  };
+  return (
+    <View style={styles.container}>
+      <Header title="Contacts" />
+      <FlatList
+        data={dummyContacts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ContactCard contact={item} />}
+      />
+    </View>
+  );
+};
 
 export default DisplayContactList;
