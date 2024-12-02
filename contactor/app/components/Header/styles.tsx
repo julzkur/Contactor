@@ -4,13 +4,13 @@ const styles = StyleSheet.create({
     container: {
         height: 60,
         justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#007bff", 
+        backgroundColor: "#caf0f8", 
+        paddingLeft: 14,
     },
     title: {
         fontSize: 20,
         fontWeight: "bold",
-        color: "white",
+        color: "#249",
     },
   });
   

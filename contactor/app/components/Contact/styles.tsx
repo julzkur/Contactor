@@ -1,17 +1,18 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 16,
-        backgroundColor: "#fff",
-    },
     contactItem: {
         flexDirection: "row",
+        backgroundColor: '#90e0ef',
         alignItems: "center",
         padding: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: "#ddd",
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 10,
+        borderTopWidth: 3,
+        borderColor: "#caf0f8",
+        borderRadius: 20,
+
     },
     thumbnail: {
         width: 50,
@@ -25,10 +26,11 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 18,
         fontWeight: "bold",
+        color: "#0077b6",
     },
     phoneNumber: {
         fontSize: 14,
-        color: "#888",
+        color: "#777",
     },
 });
 

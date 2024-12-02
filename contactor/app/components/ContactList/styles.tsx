@@ -3,9 +3,13 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-        backgroundColor: "#fff",
+        backgroundColor: "#caf0f8",
     },
+
+    flatListContainer: {
+        flexGrow: 1,
+    }
+    
 });
 
 export default styles;

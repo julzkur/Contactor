@@ -1,0 +1,19 @@
+Pastel green: c3f9b4
+
+Darker green: a3e391
+
+Salmon pink: f6b7ad
+
+Darker pink: e3857c
+
+Pastel yellow: faf6ad
+
+Darker yellow: eee76a
+
+Baby blue: bef4fc
+
+Darker blue: 75cad6
+
+Lilac: e7befc
+
+Purple: c692e0

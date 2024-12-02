@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title }) => {
     return (
         <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
+            <Text style={styles.title}>{title}</Text>
         </View>
     );
 };
