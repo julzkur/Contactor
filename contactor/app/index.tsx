@@ -1,7 +1,7 @@
-import { ContactListView } from "./Views/ContactList";
+import Routes from "./Routes";
 
 export default function Index() {
     return (
-        <ContactListView />
+        <Routes />
     );
 }

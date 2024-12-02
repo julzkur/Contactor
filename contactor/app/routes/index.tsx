@@ -16,6 +16,7 @@ const Routes: React.FC = () => {
   return (
     <Stack.Navigator
       initialRouteName="ContactList"
+      screenOptions={{headerShown: false}}
     >
       <Stack.Screen name="ContactList" component={ContactListView} />
     </Stack.Navigator>
