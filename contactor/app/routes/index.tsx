@@ -10,7 +10,7 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-import ContactListView from '../views1/ContactList';
+import ContactListView from '../views/ContactList';
 
 const Routes: React.FC = () => {
   return (

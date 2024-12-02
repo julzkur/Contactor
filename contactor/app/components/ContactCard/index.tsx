@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import Contact from "@/app/models1/contact";
+import Contact from "@/app/models/contact";
 import styles from "./styles"; // Import the styles
 
 interface ContactCardProps {

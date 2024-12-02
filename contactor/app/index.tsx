@@ -1,4 +1,4 @@
-import Routes from "./routes1";
+import Routes from "./routes";
 
 export default function Index() {
     return (
