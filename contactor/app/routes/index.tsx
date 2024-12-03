@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Contact from '../models/contact';
 import ContactListView from '../views/ContactList';
-import CreateContactView from '../views/ContactList';
+import CreateContactView from '../views/CreateContact';
 
 export type RootStackParamList = {
     ContactList: undefined;
