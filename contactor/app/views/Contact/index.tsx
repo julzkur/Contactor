@@ -1,21 +1,32 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import styles from "./styles";
-import Contact from "@/app/models/contact";
 import Header from "../../components/Header";
 import { deleteButton } from "@/app/components/DeleteButton";
-import { editButton } from "@/app/components/EditButton";
+import { editButton } from "@/app/components/EditButton"; // ætti edit og delete takkinn ekki að vera í contact component, ekki view?:)) - Julia
+import { ContactService } from "@/app/services/ContactService";
+import { RouteProp } from "@react-navigation/native";
+import { RootStackParamList } from "@/app/routes";
 
-interface contactProps {
-    contact: Contact;
-  }
+type ContactScreenRouteProp = RouteProp<RootStackParamList, "Contact">;
 
-// in Header I want the name of the contact to show, so that is missing
+interface ContactViewProps {
+  route: ContactScreenRouteProp;      //need to change so it imports from Services, not directly from Routes.
+}
 
-const ContactView: React.FC<contactProps> = ({ contact }) => {
+// Also most of this logic should be in its own Contact components, like ContactDetails or something :)) and then the view
+// just fetches that component and displays, so view only talks to that component, and the component handles talking
+// to Services and stuff
+
+// in Header I want the name of the contact to show, so that is missing OK
+
+const ContactView: React.FC<ContactViewProps> = ({ route }) => {
+
+  const { contact } = route.params; 
+  
   return (
     <View style={styles.container}>
-        <Header title="Contact"/>
+        <Header title={contact.name}/> {/*header now shows contact name*/}
         <div>
             <Image source={{ uri: contact.thumbnail }} style={styles.contactPhoto}/>
         </div>

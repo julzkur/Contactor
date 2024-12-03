@@ -23,12 +23,11 @@ const Routes: React.FC = () => {
       screenOptions={{headerShown: false}}>
 
       <Stack.Screen name="ContactList" component={ContactListView} />
-      <Stack.Screen name="Contact" component={ContactView} />
-      {/* <Stack.Screen 
+      <Stack.Screen 
         name="Contact" 
-        component={Contact}
+        component={ContactView}
         options={{ title: 'Contact Details' }} 
-      /> */}
+      /> 
     </Stack.Navigator>
   );
 };

@@ -12,7 +12,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact, navigation }) => {
 
     const handlePress = () => {
         navigation.navigate("Contact", { contact });
-    };
+      };
 
     return (
         <TouchableOpacity onPress={handlePress} style={styles.contactItem}>

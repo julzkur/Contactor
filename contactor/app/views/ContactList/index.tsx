@@ -3,10 +3,6 @@ import { View, Text } from "react-native";
 import { styles } from "./styles";
 import DisplayContactList from "@/app/components/ContactList";
 
-
-
-//const CONTACTS_DIRECTORY = 
-
 export const ContactListView = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
