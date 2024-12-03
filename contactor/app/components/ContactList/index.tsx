@@ -6,7 +6,7 @@ import Header from "../Header";
 import SearchBar from "../SearchBar";
 import { styles } from "./styles";
 
-const DisplayContactList = () => {
+const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
     const [filteredContacts, setFilteredContacts] = useState(
         [...dummyContacts].sort((a, b) => a.name.localeCompare(b.name))
       );
@@ -26,7 +26,7 @@ const DisplayContactList = () => {
             <FlatList
                 data={filteredContacts}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <ContactCard contact={item} />}
+                renderItem={({ item }) => <ContactCard contact={item} navigation={navigation} />}
             />
         </View>
     );
