@@ -24,7 +24,7 @@
     "expo-blur": "~14.0.1",
     "expo-cli": "^6.3.12",
     "expo-constants": "~17.0.3",
-    "expo-file-system": "~18.0.4",
+    "expo-file-system": "^18.0.4",
     "expo-font": "~13.0.1",
     "expo-haptics": "~14.0.0",
     "expo-linking": "~7.0.3",
@@ -44,7 +44,8 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.2",
     "ts-node": "^10.9.2",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "uuidv7": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

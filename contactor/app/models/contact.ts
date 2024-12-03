@@ -7,22 +7,23 @@ export interface Contact {
 
 export class ContactModel {
   constructor(
+    public id:string,
     public name: string,
     public phoneNumber: string,
-    public thumbnail?: string
-
+    public thumbnail?: string,
   ){}
   
   toJson():string {
     return JSON.stringify({
+      id:this.id,
       name: this.name,
       phoneNumber: this.phoneNumber,
       image: this.thumbnail || null,
     });
   }
-  fromJSON(json: string): ContactModel {
+  static fromJSON(json: string): ContactModel {
     const data = JSON.parse(json);
-    return new ContactModel(data.name, data.phoneNumber, data.image);
+    return new ContactModel(data.id, data.name, data.phoneNumber, data.image);
   }
 }
 
