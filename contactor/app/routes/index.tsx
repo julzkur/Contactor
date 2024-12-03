@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Contact from '../models/contact';
 import ContactListView from '../views/ContactList';
+import CreateContactView from '../views/ContactList';
 
 export type RootStackParamList = {
     ContactList: undefined;
@@ -15,10 +16,10 @@ const Stack = createStackNavigator<RootStackParamList>();
 const Routes: React.FC = () => {
   return (
     <Stack.Navigator
-      initialRouteName="ContactList"
+      initialRouteName="CreateContact"
       screenOptions={{headerShown: false}}>
 
-      <Stack.Screen name="ContactList" component={ContactListView} />
+      <Stack.Screen name="CreateContact" component={CreateContactView} />
       {/* <Stack.Screen 
         name="Contact" 
         component={Contact}
