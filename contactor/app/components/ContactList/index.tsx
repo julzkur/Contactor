@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 import { dummyContacts } from "@/app/resources/contacts";
 import ContactCard from "../ContactCard";
 import Header from "../Header";
