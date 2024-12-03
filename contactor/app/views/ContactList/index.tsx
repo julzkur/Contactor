@@ -3,10 +3,10 @@ import { View, Text } from "react-native";
 import { styles } from "./styles";
 import DisplayContactList from "@/app/components/ContactList";
 
-export const ContactListView = () => {
+export const ContactListView = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <DisplayContactList />
+      <DisplayContactList navigation={navigation}/>
     </View>
   );
 };
