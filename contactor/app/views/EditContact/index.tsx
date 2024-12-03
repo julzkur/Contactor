@@ -6,7 +6,7 @@ import EditContact from "@/app/components/EditContact";
 
 const DisplayEditContact = () => {
   return (
-    <View >
+    <View style={styles.container} >
     <EditContact />
     </View>
   );
