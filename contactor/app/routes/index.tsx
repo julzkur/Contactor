@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Contact from '../models/contact';
 import ContactListView from '../views/ContactList';
+import ContactView from '../views/Contact';
+
 
 export type RootStackParamList = {
     ContactList: undefined;
@@ -12,8 +14,7 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-import ContactListView from '../views/ContactList';
-import ContactView from '../views/Contact';
+
 
 const Routes: React.FC = () => {
   return (
