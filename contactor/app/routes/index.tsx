@@ -12,15 +12,13 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-import ContactListView from '../views/ContactList';
-
 const Routes: React.FC = () => {
   return (
     <Stack.Navigator
       initialRouteName="ContactList"
       screenOptions={{headerShown: false}}>
 
-      <Stack.Screen name="ContactList" component={ContactListView} />
+      <Stack.Screen name="ContactList" component={ContactList} />
       {/* <Stack.Screen 
         name="Contact" 
         component={Contact}
