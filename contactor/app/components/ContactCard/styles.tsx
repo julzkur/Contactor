@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   thumbnail: {
     width: 50,
     height: 50,
-    borderRadius: 25,
+    borderRadius: 100,
     marginRight: 10,
   },
   contactDetails: {

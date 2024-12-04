@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Contact from '../models/contact';
 import ContactListView from '../views/ContactList';
 import ContactView from '../views/Contact';
+import DisplayEditContact from '../views/EditContact';
 
 
 export type RootStackParamList = {
@@ -28,6 +29,7 @@ const Routes: React.FC = () => {
         component={ContactView}
         options={{ title: 'Contact Details' }} 
       /> 
+      <Stack.Screen name="EditContact" component={DisplayEditContact}/>
     </Stack.Navigator>
   );
 };

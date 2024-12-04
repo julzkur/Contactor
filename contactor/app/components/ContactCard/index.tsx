@@ -6,13 +6,14 @@ import styles from "./styles";
 interface ContactCardProps {
   contact: Contact;
   navigation: any;
+  handleDelete: (contactId: string) => void;
 }
 
-const ContactCard: React.FC<ContactCardProps> = ({ contact, navigation }) => {
+const ContactCard: React.FC<ContactCardProps> = ({ contact, navigation, handleDelete }) => {
 
     const handlePress = () => {
-        navigation.navigate("Contact", { contact });
-      };
+        navigation.navigate("Contact", { contact: contact, handleDelete: handleDelete });
+    };
 
     return (
         <TouchableOpacity onPress={handlePress} style={styles.contactItem}>

@@ -1,16 +1,32 @@
 import React from "react";
-import { Text } from "react-native";
+import { Alert, Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
+import { ContactService } from "@/app/services/ContactService";
 
-export const deleteButton = () => {
-    
-    const deleteContact = ""; //Missing the functunality
+interface DeleteButtonProps {
+    contactId: string;
+    navigation: any;
+    handleDelete: () => void; // updates contact list after deletion
+  }
+  
+  export const DeleteButton: React.FC<DeleteButtonProps> = ({ handleDelete }) => {
+
+      const confirmDelete = () => {
+        Alert.alert(
+          "Delete Contact",
+          "Are you sure you want to delete this contact?",
+          [
+            { text: "Cancel", style: "cancel" },
+            { text: "Delete", style: "destructive", onPress: handleDelete },
+          ]
+        );
+      };
 
     return (
-        <button style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={confirmDelete}>
             <Text style={styles.buttonText}>Delete</Text>
-        </button>
+        </TouchableOpacity>
     )
 };
 
-export default deleteButton;
+export default DeleteButton;

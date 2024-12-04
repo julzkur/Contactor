@@ -1,18 +1,14 @@
 import React from "react";
-import { Text } from "react-native";
-import {useNavigation} from "@react-navigation/native"
+import { Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
-export const editButton = () => {
-    
-  const navigation = useNavigation()
+export const EditButton = () => {
 
   return (
-    <button style={styles.button} //missing to navigate to another screen
-    >
+    <TouchableOpacity style={styles.button}>
       <Text style={styles.buttonText}>Edit</Text>
-    </button>
+    </TouchableOpacity>
     )
 };
 
-export default editButton;
+export default EditButton;
