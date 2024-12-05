@@ -5,6 +5,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#555",
   },
+  title: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#249",
+  },
 });
 
 export default styles;

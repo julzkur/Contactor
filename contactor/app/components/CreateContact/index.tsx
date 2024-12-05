@@ -3,10 +3,15 @@ import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 import Header from "../Header";
 
-const CreateContact: React.FC = () => {
+interface CreateContactProps {
+  navigation: any; // Add navigation as a prop
+}
+
+const CreateContact: React.FC<CreateContactProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Header title="Add Contact" />
+      
+
       <Text style={styles.label}>Name:</Text>
       <TextInput placeholder="Enter name" style={styles.input} />
       
@@ -16,7 +21,8 @@ const CreateContact: React.FC = () => {
       <Text style={styles.label}>Photo URL:</Text>
       <TextInput placeholder="Enter photo URL" style={styles.input} />
       
-      <TouchableOpacity style={styles.button}>
+      {/* Go Back Button */}
+      <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
         <Text style={styles.buttonText}>Save</Text>
       </TouchableOpacity>
     </View>
