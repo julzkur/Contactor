@@ -18,7 +18,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 const Routes: React.FC = () => {
   return (
     <Stack.Navigator
-      initialRouteName="CreateContact"
+      initialRouteName="ContactList"
       screenOptions={{ headerShown: false }}>
       
       <Stack.Screen name="ContactList" component={ContactListView} />
