@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { View, TextInput } from "react-native";
+import React from 'react';
+import { View, TextInput, TouchableOpacity, Text } from 'react-native';
+import styles from './styles';
 import Header from "../Header";
-import { styles } from "./styles";
 
-import { ContactService } from "@/app/services/ContactService";
-
-const DisplayCreateContact: React.FC<{ navigation: any }> = ({ navigation }) => {
-  const contactService = new ContactService();
-  /* 
-  style={styles.input}
-  value={name}
-  onChangeText={setName}
-  */
+const CreateContact: React.FC = () => {
   return (
-    <View>
-      <Header title="Create Contact" />
+    <View style={styles.container}>
+      <Header title="Add Contact" />
+      <Text style={styles.label}>Name:</Text>
+      <TextInput placeholder="Enter name" style={styles.input} />
       
+      <Text style={styles.label}>Phone Number:</Text>
+      <TextInput placeholder="Enter phone number" style={styles.input} />
+      
+      <Text style={styles.label}>Photo URL:</Text>
+      <TextInput placeholder="Enter photo URL" style={styles.input} />
+      
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Save</Text>
+      </TouchableOpacity>
     </View>
   );
-}; 
+};
 
-export default DisplayCreateContact;
+export default CreateContact;

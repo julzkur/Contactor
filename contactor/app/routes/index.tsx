@@ -2,7 +2,9 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Contact from '../models/contact';
 import ContactListView from '../views/ContactList';
-import CreateContactView from '../views/CreateContact';
+import ContactView from '../views/Contact';
+import DisplayEditContact from '../views/EditContact';
+
 
 export type RootStackParamList = {
     ContactList: undefined;
@@ -13,18 +15,21 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
+
+
 const Routes: React.FC = () => {
   return (
     <Stack.Navigator
       initialRouteName="CreateContact"
       screenOptions={{headerShown: false}}>
 
-      <Stack.Screen name="CreateContact" component={CreateContactView} />
-      {/* <Stack.Screen 
+      <Stack.Screen name="ContactList" component={ContactListView} />
+      <Stack.Screen 
         name="Contact" 
-        component={Contact}
+        component={ContactView}
         options={{ title: 'Contact Details' }} 
-      /> */}
+      /> 
+      <Stack.Screen name="EditContact" component={DisplayEditContact}/>
     </Stack.Navigator>
   );
 };

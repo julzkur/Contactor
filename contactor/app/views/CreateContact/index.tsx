@@ -1,15 +1,14 @@
-import React from "react";
-import { View, Text } from "react-native";
-import { styles } from "./styles";
-import DisplayCreateContact from "@/app/components/CreateContact";
+import React from 'react';
+import { View } from 'react-native';
+import styles from './styles';
+import CreateContact from "@/app/components/CreateContact";
 
-export const CreateContactView = ({ navigation }: any) => {
+const DisplayEditContact: React.FC = () => {
   return (
     <View style={styles.container}>
-      <DisplayCreateContact navigation={navigation}/>
+      <CreateContact />
     </View>
   );
-
 };
 
-export default CreateContactView;
+export default DisplayEditContact;

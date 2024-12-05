@@ -1,15 +1,24 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, TextStyle } from "react-native";
 import styles from "./styles";
 
 interface HeaderProps {
   title: string;
+  showBackButton?: boolean;
+  navigation: any;
+  titleStyle?: TextStyle;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = ({ title, navigation, showBackButton = true, titleStyle }) => {
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      {showBackButton && (
+      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+        <Text style={styles.backButtonText}>{"<"}</Text>
+      </TouchableOpacity>
+      )}
+      <Text style={[styles.title, titleStyle]}>{title}</Text>
     </View>
   );
 };
