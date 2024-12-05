@@ -15,8 +15,6 @@ const CreateContact: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      
-
       <Text style={styles.label}>Name:</Text>
       <TextInput 
       placeholder="Enter name" 

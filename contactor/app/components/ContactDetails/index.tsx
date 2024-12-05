@@ -39,7 +39,7 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({ route, navigation }) =>
           <DetailsTextContainer text={contact.name} />
           <DetailsTextContainer text={contact.phoneNumber} />
           <DeleteButton contactId={contact.id} handleDelete={wrappedDelete} navigation={navigation} />
-          {/*<EditButton contactId={contact.id} navigation={navigation} />*/}
+          <EditButton contactId={contact.id} navigation={navigation} />
       </View></>
   )
 }
