@@ -1,5 +1,5 @@
 import { TextInput } from "react-native";
-import { styles } from "./styles";
+import styles from "./styles";
 
 import { ContactService } from "@/app/services/ContactService";
 
