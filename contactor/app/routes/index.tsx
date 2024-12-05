@@ -21,7 +21,7 @@ const Routes: React.FC = () => {
     <Stack.Navigator
       initialRouteName="ContactList"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name="CreateContact" component={CreateContact} />
+      
       <Stack.Screen name="ContactList" component={ContactListView} />
       <Stack.Screen 
         name="Contact" 
@@ -29,6 +29,7 @@ const Routes: React.FC = () => {
         options={{ title: 'Contact Details' }} 
       /> 
       <Stack.Screen name="EditContact" component={DisplayEditContact}/>
+      <Stack.Screen name="CreateContact" component={CreateContact} />
       
     </Stack.Navigator>
   );
