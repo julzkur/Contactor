@@ -8,10 +8,13 @@ interface EditButtonProps {
   handleDelete: () => void; // updates contact list after deletion
 }
 
-export const EditButton = () => {
+export const EditButton = ({ navigation, contactId }: { navigation: any, contactId:string }) => {
 
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity 
+    style={styles.button}
+    /* Navigate to edit screen */
+    >
       <Text style={styles.buttonText}>Edit</Text>
     </TouchableOpacity>
     )
