@@ -9,8 +9,8 @@ import CreateContact from '../views/CreateContact';
 
 export type RootStackParamList = {
     ContactList: undefined;
-    Contact: {contact: Contact} ;
-    CreateContact: undefined;
+    Contact: { contact: Contact };
+    CreateContact: undefined; // Define the type for the CreateContact route
     EditContact: undefined;
 };
 

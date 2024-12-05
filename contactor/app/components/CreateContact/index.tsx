@@ -15,7 +15,8 @@ const CreateContact: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Header title="Add Contact" />
+      
+
       <Text style={styles.label}>Name:</Text>
       <TextInput 
       placeholder="Enter name" 
