@@ -4,6 +4,7 @@ import Contact from '../models/contact';
 import ContactListView from '../views/ContactList';
 import ContactView from '../views/Contact';
 import DisplayEditContact from '../views/EditContact';
+import CreateContact from '../views/CreateContact';
 
 
 export type RootStackParamList = {
@@ -15,14 +16,12 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-
-
 const Routes: React.FC = () => {
   return (
     <Stack.Navigator
-      initialRouteName="CreateContact"
+      initialRouteName="ContactList"
       screenOptions={{headerShown: false}}>
-
+      <Stack.Screen name="CreateContact" component={CreateContact} />
       <Stack.Screen name="ContactList" component={ContactListView} />
       <Stack.Screen 
         name="Contact" 
@@ -30,6 +29,7 @@ const Routes: React.FC = () => {
         options={{ title: 'Contact Details' }} 
       /> 
       <Stack.Screen name="EditContact" component={DisplayEditContact}/>
+      
     </Stack.Navigator>
   );
 };

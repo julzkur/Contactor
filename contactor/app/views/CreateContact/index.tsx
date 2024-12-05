@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import styles from './styles';
 import CreateContact from "@/app/components/CreateContact";
 
-const DisplayEditContact: React.FC = () => {
+const DisplayEditContact = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <CreateContact />
+      <CreateContact navigation={navigation} />
     </View>
   );
 };
