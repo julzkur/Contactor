@@ -5,20 +5,37 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#555",
   },
+
   header: {
     height: 60,
-    paddingTop: 10,
-    justifyContent: "center",
+    flexDirection: "row", // To position elements horizontally
+    alignItems: "center", // Vertically center items
+    justifyContent: "space-between", // Push items to the sides
     backgroundColor: "#caf0f8", 
-    paddingLeft: 14,
-    position: "relative"
-},
-title: {
-    marginLeft: 0,
+    paddingHorizontal: 14, // Space on both sides
+  },
+
+  title: {
     fontSize: 25,
     fontWeight: "bold",
     color: "#249",
-},
+  },
+
+  createButton: {
+    padding: 5,
+    backgroundColor: "#90e0ef",
+    borderRadius: 20,
+    width: 50,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
 });
 
 export default styles;
