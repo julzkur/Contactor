@@ -45,7 +45,8 @@
     "react-native-webview": "13.12.2",
     "ts-node": "^10.9.2",
     "uuid": "^11.0.3",
-    "uuidv7": "^1.0.2"
+    "uuidv7": "^1.0.2",
+    "expo-image-picker": "~16.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

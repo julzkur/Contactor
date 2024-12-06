@@ -40,6 +40,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+  imagePickerContainer: {
+    marginVertical: 10,
+    alignItems: 'center',
+  },
+  imagePickerButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  imagePreview: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginVertical: 10,
+  },
+  
 });
 
 export default styles;
