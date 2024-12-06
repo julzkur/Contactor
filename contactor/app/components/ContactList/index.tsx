@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Button } from "react-native";
 import { dummyContacts } from "@/app/resources/contacts";
 import ContactCard from "../ContactCard";
 import SearchBar from "../SearchBar";
@@ -18,8 +18,8 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
       try {
         const allContacts = await contactService.getAllContacts();
         const sortedContacts = allContacts.sort((a, b) => a.name.localeCompare(b.name));
-        setContacts(sortedContacts); // Set sorted contacts from the service
-        setFilteredContacts(sortedContacts); // Initially display all contacts
+        setContacts(sortedContacts); 
+        setFilteredContacts(sortedContacts);
       } catch (error) {
         console.error("Error fetching contacts:", error);
       }
@@ -43,6 +43,15 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
     setFilteredContacts(updatedContacts);
   };
 
+  // FOR DEBUGGING IF U FUCK UP THE CONTACT DIR INTERNALLY ON PHONE
+
+  // const handleReset = async () => {
+  //   await contactService.resetDirectory();
+  //   console.log("Contacts directory reset.");
+  // };
+
+    
+
   return (
       <View style={styles.container}>
           <SearchBar onSearch={handleSearch} />
@@ -53,6 +62,12 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
                 <ContactCard contact={item} navigation={navigation} handleDelete={handleDelete} />
               )}
           />
+        
+          {/* uncomment this for reset contact dir button
+          <View>
+            <Button title="Reset Contacts Directory" onPress={handleReset} />
+          </View> */} 
+
       </View>
   );
 };

@@ -94,4 +94,18 @@ export class ContactService {
       await FileSystem.deleteAsync(CONTACTS_DIRECTORY + fileToDelete);
     }
   }
+
+  async resetDirectory() {
+    try {
+      const directoryExists = await FileSystem.getInfoAsync(CONTACTS_DIRECTORY);
+      if (directoryExists.exists) {
+        await FileSystem.deleteAsync(CONTACTS_DIRECTORY, { idempotent: true });
+        console.log("Contacts directory deleted successfully.");
+      }
+      await FileSystem.makeDirectoryAsync(CONTACTS_DIRECTORY, { intermediates: true });
+      console.log("Contacts directory recreated successfully.");
+    } catch (error) {
+      console.error("Error resetting contacts directory:", error);
+    }
+  }
 }

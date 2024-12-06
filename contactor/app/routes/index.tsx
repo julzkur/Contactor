@@ -5,6 +5,7 @@ import ContactListView from '../views/ContactList';
 import ContactView from '../views/Contact';
 import DisplayEditContact from '../views/EditContact';
 import CreateContact from '../views/CreateContact';
+import DebugScreen from '../views/DebugScreen';
 
 
 export type RootStackParamList = {
@@ -12,6 +13,7 @@ export type RootStackParamList = {
     Contact: { contact: Contact };
     CreateContact: undefined; // Define the type for the CreateContact route
     EditContact: undefined;
+    DebugScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
