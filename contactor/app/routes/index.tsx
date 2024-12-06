@@ -11,9 +11,8 @@ import DebugScreen from '../views/DebugScreen';
 export type RootStackParamList = {
     ContactList: undefined;
     Contact: { contact: Contact };
-    CreateContact: undefined; // Define the type for the CreateContact route
+    CreateContact: undefined; 
     EditContact: undefined;
-    DebugScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();

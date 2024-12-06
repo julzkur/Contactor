@@ -13,6 +13,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: "#caf0f8",
     },
+    buttons: {
+        backgroundColor: 'grey',
+    }
 });
 
 export default styles;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
-import Header from "../Header";
 import { ContactService } from '@/app/services/ContactService';
 import { useState } from 'react';
 
