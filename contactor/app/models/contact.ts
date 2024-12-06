@@ -18,7 +18,7 @@ export class ContactModel {
       id: this.id,
       name: this.name,
       phoneNumber: this.phoneNumber,
-      thumbnail: this.thumbnail || null, // Ensure 'thumbnail' is used
+      thumbnail: this.thumbnail || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbySPOVJMWqKXXDjw9zQLk4k7k7T2xDXjzsw&s"
     });
   }
 
