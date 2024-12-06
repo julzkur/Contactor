@@ -1,11 +1,19 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Text } from "react-native";
 import styles from "./styles";
 import ContactDetails from "@/app/components/ContactDetails";
 
 
 const ContactView = ({ navigation, route }: any) => {
   const { contact } = route.params; // Get the contact from route params
+
+  if (!contact) {
+    return (
+      <View style={styles.container}>
+        <Text style={{ color: 'red', fontSize: 16 }}>No contact found.</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>

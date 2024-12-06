@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ title, navigation, showBackButton = tru
   return (
     <View style={styles.container}>
       {showBackButton && (
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+      <TouchableOpacity onPress={() => navigation.navigate("ContactList")} style={styles.backButton}>
         <Text style={styles.backButtonText}>{"<"}</Text>
       </TouchableOpacity>
       )}

@@ -30,6 +30,8 @@ export class ContactService {
     await this.ensureDirectory();
     const files = await FileSystem.readDirectoryAsync(CONTACTS_DIRECTORY);
 
+    console.log("Files in directory:", files);
+
     if (files.length === 0) { // No contacts found, return dummy data
       return dummyContacts;
     }
@@ -38,13 +40,14 @@ export class ContactService {
 
     const contacts = await Promise.all(
       contactFiles.map(async (file) => {
-        const fileUri = CONTACTS_DIRECTORY + '/' + file; // breytti thessu til ad loada saved contacts 
+        const fileUri = `${CONTACTS_DIRECTORY}/${file}`;
         const data = await FileSystem.readAsStringAsync(fileUri);
         return JSON.parse(data);
       })
     );
+
     return contacts.sort((a, b) => a.name.localeCompare(b.name));
-  }
+  };
 
   getContactById = async (id:string): Promise<ContactModel | undefined> => {
     await this.ensureDirectory();
@@ -69,19 +72,23 @@ export class ContactService {
     
     const id = uuidv7();
     const contact = new ContactModel(id, name, phoneNumber, thumbnail);
-    const filename = `${CONTACTS_DIRECTORY}/${name}-${id}.json`;
+    const filename = `${CONTACTS_DIRECTORY}/${id}.json`;
     await FileSystem.writeAsStringAsync(filename, contact.toJson());
     return id;
   }
 
   // might break
-  editContact = async (id:string, name:string, phoneNumber:string, thumbnail:string) => {
+  editContact = async (id: string, name: string, phoneNumber: string, thumbnail: string): Promise<void> => {
     await this.ensureDirectory();
-    const contact = new ContactModel(id, name, phoneNumber, thumbnail);
-    const filename = `${CONTACTS_DIRECTORY}/${name}-${id}.json`;
-    await FileSystem.writeAsStringAsync(filename, contact.toJson());
+    const filePath = `${CONTACTS_DIRECTORY}/${id}.json`;
 
-  }
+    const updatedContact = new ContactModel(id, name, phoneNumber, thumbnail);
+
+    // Overwrite or create a new file for the updated contact
+    await FileSystem.writeAsStringAsync(filePath, updatedContact.toJson());
+  };
+  
+  
 
   // might break
   deleteContact = async (id:string) => {

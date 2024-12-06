@@ -19,17 +19,23 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
         const sortedContacts = allContacts.sort((a, b) => a.name.localeCompare(b.name));
         setContacts(sortedContacts); 
         setFilteredContacts(sortedContacts);
+        console.log("Fetched contacts:", allContacts);
+
       } catch (error) {
         console.error("Error fetching contacts:", error);
       }
     };
-    
-    fetchContacts();
-  }, []);
+  
+    const unsubscribe = navigation.addListener("focus", fetchContacts);
+  
+    return unsubscribe; 
+  }, [navigation]);
 
   const handleSearch = (searchText: string) => {
-      const filtered = contacts.filter((contact) =>
-        contact.name.toLowerCase().includes(searchText.toLowerCase())
+      const filtered = contacts
+      .filter((contact) =>
+        contact.name.toLowerCase()
+        .includes(searchText.toLowerCase())
       ).sort((a, b) => a.name.localeCompare(b.name));
 
       setFilteredContacts(filtered);

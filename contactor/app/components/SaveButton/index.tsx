@@ -28,7 +28,7 @@ export const SaveButton: React.FC<SaveButtonProps> = ({ contact, navigation }) =
                 contact.thumbnail || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbySPOVJMWqKXXDjw9zQLk4k7k7T2xDXjzsw&s"
             );
             alert("Contact updated successfully!");
-            navigation.navigate("Contact", { updatedContact: contact });
+            navigation.navigate("Contact", { contact });
 
         } catch (error) {
             alert("Failed to update contact.");
