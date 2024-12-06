@@ -14,9 +14,12 @@ export const styles = StyleSheet.create({
         backgroundColor: "#caf0f8",
     },
     buttons: {
-        backgroundColor: 'grey',
-        flexWrap: 'wrap',
-    }
+        flexDirection: 'row',
+        paddingTop: 10,
+        justifyContent: 'space-between',
+        alignItems: 'center', 
+        width: '80%', 
+      },
 });
 
 export default styles;

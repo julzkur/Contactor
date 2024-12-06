@@ -6,13 +6,12 @@ import styles from "./styles";
 interface ContactCardProps {
   contact: Contact;
   navigation: any;
-  handleDelete: (contactId: string) => void;
 }
 
-const ContactCard: React.FC<ContactCardProps> = ({ contact, navigation, handleDelete }) => {
+const ContactCard: React.FC<ContactCardProps> = ({ contact, navigation }) => {
 
     const handlePress = () => {
-        navigation.navigate("Contact", { contact: contact, handleDelete: handleDelete });
+        navigation.navigate("Contact", { contact });
     };
 
     return (

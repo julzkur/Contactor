@@ -3,13 +3,15 @@ import { View, Image } from "react-native";
 import styles from "./styles";
 import ContactDetails from "@/app/components/ContactDetails";
 
-const ContactView = ({navigation, route}: any) => {
-  
+
+const ContactView = ({ navigation, route }: any) => {
+  const { contact } = route.params; // Get the contact from route params
+
   return (
     <View style={styles.container}>
-        <ContactDetails route={route} navigation={navigation} />
+      <ContactDetails contact={contact} navigation={navigation} />
     </View>
-  )
+  );
 };
 
 export default ContactView;

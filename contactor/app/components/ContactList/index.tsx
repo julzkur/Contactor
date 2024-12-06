@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { View, FlatList, Button } from "react-native";
-import { dummyContacts } from "@/app/resources/contacts";
 import ContactCard from "../ContactCard";
 import SearchBar from "../SearchBar";
 import { styles } from "./styles";
@@ -56,10 +55,9 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
               data={filteredContacts}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => (
-                <ContactCard contact={item} navigation={navigation} handleDelete={handleDelete} />
+                <ContactCard contact={item} navigation={navigation} />
               )}
           />
-        
           <View>
             <Button title="Reset Contacts Directory" onPress={handleReset} />
           </View>
