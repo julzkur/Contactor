@@ -2,7 +2,6 @@
 import * as FileSystem from 'expo-file-system';
 import { uuidv7 } from 'uuidv7';
 import Contact, { ContactModel } from '../models/contact';
-const newUuid = uuidv7();
 
 export const dummyContacts: ContactModel[] = [
   new ContactModel("1", "Pabbi labbi", "+0987654321", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbySPOVJMWqKXXDjw9zQLk4k7k7T2xDXjzsw&s",),
@@ -78,8 +77,8 @@ export class ContactService {
   // might break
   editContact = async (id:string, name:string, phoneNumber:string, thumbnail:string) => {
     await this.ensureDirectory();
-    const filename = `${CONTACTS_DIRECTORY}/${name}-${id}.json`;
     const contact = new ContactModel(id, name, phoneNumber, thumbnail);
+    const filename = `${CONTACTS_DIRECTORY}/${name}-${id}.json`;
     await FileSystem.writeAsStringAsync(filename, contact.toJson());
 
   }

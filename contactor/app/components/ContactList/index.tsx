@@ -8,7 +8,7 @@ import { ContactService } from "@/app/services/ContactService";
 import { ContactModel } from "@/app/models/contact";
 
 const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
-  const [contacts, setContacts] = useState<ContactModel[]>([]); // Store all contacts
+  const [contacts, setContacts] = useState<ContactModel[]>([]);
   const [filteredContacts, setFilteredContacts] = useState<ContactModel[]>([]);
   
   const contactService = new ContactService();
@@ -37,20 +37,17 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
   };
 
   const handleDelete = (contactId: string) => {
-    // Remove the deleted contact from the list
     const updatedContacts = contacts.filter(contact => contact.id !== contactId);
     setContacts(updatedContacts);
     setFilteredContacts(updatedContacts);
   };
 
-  // FOR DEBUGGING IF U FUCK UP THE CONTACT DIR INTERNALLY ON PHONE
+  //FOR DEBUGGING IF U FUCK UP THE CONTACT DIR INTERNALLY ON PHONE
 
-  // const handleReset = async () => {
-  //   await contactService.resetDirectory();
-  //   console.log("Contacts directory reset.");
-  // };
-
-    
+  const handleReset = async () => {
+    await contactService.resetDirectory();
+    console.log("Contacts directory reset.");
+  };
 
   return (
       <View style={styles.container}>
@@ -63,10 +60,9 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
               )}
           />
         
-          {/* uncomment this for reset contact dir button
           <View>
             <Button title="Reset Contacts Directory" onPress={handleReset} />
-          </View> */} 
+          </View>
 
       </View>
   );

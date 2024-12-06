@@ -1,39 +1,50 @@
-import React from 'react';
-import { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, TextInput } from 'react-native';
 import styles from './styles';
 import Header from "../Header";
-import { ContactService } from '@/app/services/ContactService';
+import SaveButton from '../SaveButton';
+import Contact from '@/app/models/contact';
 
-const EditContact: React.FC<{ navigation: any, contactId:string }> = ({ navigation, contactId }) => {
-  const contactService = new ContactService();
+interface EditContactProps {
+  contact: Contact;
+  navigation: any;
+}
 
-  const [thumbnail, setThumbnail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [name, setName] = useState('');
+const EditContact: React.FC<EditContactProps> = ( {contact, navigation} ) => {
   
+  const [name, setName] = useState(contact.name);
+  const [phoneNumber, setPhoneNumber] = useState(contact.phoneNumber);
+  const [thumbnail, setThumbnail] = useState(contact.thumbnail);
+
+  const updatedContact = {
+    ...contact, // Retain the original `id` and any other fields
+    name,
+    phoneNumber,
+    thumbnail,
+  };
+
     return (
       <View style={styles.container}>
-        <Header title="Contacts" navigation={navigation}/>
-        <TextInput 
-        placeholder="Name" 
+        <Header title="Edit Contact" navigation={navigation}/>
+        <TextInput
+        placeholder="Name"
         style={styles.input}
         value={name}
-        onChangeText={(text) => setName(text)}
+        onChangeText={setName}
         />
-        <TextInput 
-        placeholder="Phone Number" 
-        style={styles.input} 
-        value={phoneNumber}
-        onChangeText={(text) => setName(text)}
+        <TextInput
+          placeholder="Phone Number"
+          style={styles.input}
+          value={phoneNumber}
+          onChangeText={setPhoneNumber}
         />
-        <TextInput 
-        placeholder="Thumbnail" 
-        style={styles.input} 
-        value={thumbnail}
-        onChangeText={(text) => setName(text)}
+        <TextInput
+          placeholder="Thumbnail"
+          style={styles.input}
+          value={thumbnail}
+          onChangeText={setThumbnail}
         />
-        <TouchableOpacity 
+        {/*<TouchableOpacity 
         style={styles.button}
         onPress={() => {
           const asyncResult = contactService.editContact(contactId, name, phoneNumber, thumbnail);
@@ -44,10 +55,11 @@ const EditContact: React.FC<{ navigation: any, contactId:string }> = ({ navigati
             console.error('Error:', error);
           });
           navigation.navigate('ContactList', { navigation });
-        }}
-        >
-          <Text style={styles.buttonText}>Save</Text>
-        </TouchableOpacity>
+        }}*/}
+        <SaveButton
+        contact={updatedContact}
+        navigation={navigation}
+      />
       </View>
     );
   };

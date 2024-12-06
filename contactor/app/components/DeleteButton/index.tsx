@@ -1,7 +1,6 @@
 import React from "react";
 import { Alert, Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
-import { ContactService } from "@/app/services/ContactService";
 
 interface DeleteButtonProps {
     contactId: string;

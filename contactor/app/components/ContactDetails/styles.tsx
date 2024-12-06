@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     },
     buttons: {
         backgroundColor: 'grey',
+        flexWrap: 'wrap',
     }
 });
 
