@@ -64,9 +64,9 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
                 <ContactCard contact={item} navigation={navigation} />
               )}
           />
-          <View>
+          {/* <View>
             <Button title="Reset Contacts Directory" onPress={handleReset} />
-          </View>
+          </View> */}
 
       </View>
   );

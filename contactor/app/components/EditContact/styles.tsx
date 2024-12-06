@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
   },
 
   input: {
+    height: 50,
     backgroundColor: "#ffffff", // White background for inputs
     borderRadius: 8, // Rounded corners
     padding: 12, // Padding inside the text input
@@ -27,11 +28,35 @@ export const styles = StyleSheet.create({
     alignItems: "center", // Center text horizontally
     marginTop: 16, // Space above the button
   },
-
+  uploadbutton: {
+    width: 80,
+    height: 60,
+    backgroundColor: "#0096c7",
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: 'center',
+    marginTop: 16,
+  },
   buttonText: {
     color: "#ffffff", // White text color
     fontSize: 16, // Font size for button text
     fontWeight: "bold", // Bold text for emphasis
+  },
+  imagePickerContainer: {
+    marginVertical: 10,
+    alignItems: 'center',
+  },
+  imagePickerButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  imagePreview: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginVertical: 10,
   },
 });
 

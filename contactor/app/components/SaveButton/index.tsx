@@ -14,9 +14,8 @@ export const SaveButton: React.FC<SaveButtonProps> = ({ contact, navigation }) =
     const contactService = new ContactService();
 
     const saveContact = async () => {
-        if (!contact.name || !contact.phoneNumber) {
-            alert("Name and phone number are required!");
-
+        if (!contact.name) {
+            alert("Name can't be empty");
             return;
         }
 

@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export const CreateButton = ({ navigation }: { navigation: any }) => {
   const handlePress = () => {
-    navigation.navigate("CreateContact"); // Navigate to the CreateContact screen
+    navigation.navigate("CreateContact"); 
   };
 
   return (

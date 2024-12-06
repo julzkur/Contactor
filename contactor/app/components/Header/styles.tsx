@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         position: "relative"
     },
     title: {
-        marginLeft: 60,
+        marginLeft: 50,
         fontSize: 25,
         fontWeight: "bold",
         color: "#249",

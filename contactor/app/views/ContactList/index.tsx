@@ -9,11 +9,7 @@ export const ContactListView = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Header title="Contacts" navigation={navigation} showBackButton={false} titleStyle={styles.title} />
-      
-      {/* Pass navigation to CreateButton */}
       <CreateButton navigation={navigation} />
-      
-      {/* Contact List */}
       <DisplayContactList navigation={navigation} />
     </View>
   );
