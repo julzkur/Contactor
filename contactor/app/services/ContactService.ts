@@ -105,8 +105,6 @@ export class ContactService {
     // Overwrite or create a new file for the updated contact
     await FileSystem.writeAsStringAsync(filePath, updatedContact.toJson());
   };
-  
-  
 
   // might break
   deleteContact = async (id:string) => {

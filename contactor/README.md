@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
+# Contactor
+# Assignment 2 MAPP
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Description
 
-## Get started
+Contactor is an app designed to display a list of saved contacts along with their details. 
+The app allows users to import contacts from their device, view and edit contact information, and search through the list of contacts. 
+It supports both iOS and Android platforms.
 
-1. Install dependencies
+On start-up, the app displays two Dummy-Contacts that can be used for testing functionality.
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+## Running the App
 
-   ```bash
-    npx expo start
-   ```
+#### Prerequisites
 
-In the output, you'll find options to open the app in a
+Before setting up the project, ensure you have the following installed:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js (v.20+)
+- npm (Node Package Manager)
+- React Native CLI
+- Expo CLI
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Open terminal and navigate into the root directory
 
 ```bash
-npm run reset-project
+cd contactor/contactor
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Install all necessary dependencies by running:
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+To run the application, use the following command:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+This will start the Expo development server.
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you're running the app on a Simulator/Emulator, you can use the following commands:
+    
+- iOS: 
+    ```bash
+    npx expo start --ios
+    ```
+- Android: 
+    ```bash
+    npx expo start --android
+    ```
+
+## Known Issues
+
+If you experience issues from the get-go, analyze the error and try running these commands to install necessary libraries independently:
+
+npm install @react-navigation/native
+
+npx expo install expo-file-system
+
+npm install react-native-screens react-native-safe-area-context
+
+npm install @react-navigation/stack
+
+npx expo install expo-file-system
+
+npx expo install expo-image-picker
+
+npm install -g expo-cli
+
+expo install expo-contacts
+
+
+## Technologies used
+
+    React Native
+    React Navigation
+    Expo Router
+    Expo FileSystem
+    Expo ImagePicker
+    Expo Contacts
+    eslint
+    Jest
+
+## Platform Support
+
+### Primary Development Platform
+    - iOS/Android
+    - Test devices: web, Samsung Galaxy S20 FE, iPhone 12 Pro
+    - Web support: via Expo web support (although not available with FileSystems)
+    - Tested OS: macOS, Windows, Android, iOS
