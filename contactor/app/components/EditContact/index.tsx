@@ -44,18 +44,6 @@ const EditContact: React.FC<EditContactProps> = ( {contact, navigation} ) => {
           value={thumbnail}
           onChangeText={setThumbnail}
         />
-        {/*<TouchableOpacity 
-        style={styles.button}
-        onPress={() => {
-          const asyncResult = contactService.editContact(contactId, name, phoneNumber, thumbnail);
-          asyncResult.then(result => {
-            console.log('Result:', result);
-            // Use the result here
-          }).catch(error => {
-            console.error('Error:', error);
-          });
-          navigation.navigate('ContactList', { navigation });
-        }}*/}
         <SaveButton
         contact={updatedContact}
         navigation={navigation}
