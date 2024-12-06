@@ -4,10 +4,10 @@ import styles from './styles';
 import EditContact from "@/app/components/EditContact";
 
 
-const DisplayEditContact: React.FC<{navigation: any}> = ({navigation}) => {
+const DisplayEditContact = ({ navigation, contactId }: any) => {
   return (
     <View style={styles.container} >
-      <EditContact nagivation={navigation}/>
+      <EditContact navigation={navigation} contactId={contactId}/>
     </View>
   );
 };
