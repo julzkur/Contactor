@@ -20,7 +20,6 @@ const ContactCard: React.FC<ContactCardProps> = ({ contact, navigation, handleDe
             <Image source={{ uri: contact.thumbnail }} style={styles.thumbnail}/>
             <View style={styles.contactDetails}>
                 <Text style={styles.name}>{contact.name}</Text>
-                <Text style={styles.phoneNumber}>{contact.phoneNumber}</Text>
             </View>
         </TouchableOpacity>
     );
