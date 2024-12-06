@@ -5,6 +5,7 @@ import SearchBar from "../SearchBar";
 import { styles } from "./styles";
 import { ContactService } from "@/app/services/ContactService";
 import { ContactModel } from "@/app/models/contact";
+import ImportButton from "../ImportButton";
 
 const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [contacts, setContacts] = useState<ContactModel[]>([]);
@@ -41,10 +42,10 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
       setFilteredContacts(filtered);
   };
 
-  const handleDelete = (contactId: string) => {
-    const updatedContacts = contacts.filter(contact => contact.id !== contactId);
-    setContacts(updatedContacts);
-    setFilteredContacts(updatedContacts);
+  const refreshContacts = async () => {
+    const allContacts = await new ContactService().getAllContacts();
+    setContacts(allContacts);
+    setFilteredContacts(allContacts); // Reset to show all contacts
   };
 
   //FOR DEBUGGING IF U FUCK UP THE CONTACT DIR INTERNALLY ON PHONE
@@ -56,6 +57,7 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
       <View style={styles.container}>
+          <ImportButton refreshContacts={refreshContacts}/>
           <SearchBar onSearch={handleSearch} />
           <FlatList
               data={filteredContacts}
@@ -64,9 +66,9 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
                 <ContactCard contact={item} navigation={navigation} />
               )}
           />
-          {/* <View>
+          <View>
             <Button title="Reset Contacts Directory" onPress={handleReset} />
-          </View> */}
+          </View>
 
       </View>
   );

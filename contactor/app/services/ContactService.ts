@@ -25,6 +25,24 @@ export class ContactService {
     await FileSystem.writeAsStringAsync(filePath, JSON.stringify(contact));
   }
 
+  saveContact = async (contact: ContactModel) => {
+    try {
+      const contactId = await this.createContact(
+        contact.name,
+        contact.phoneNumber, 
+        contact.thumbnail
+      );
+      console.log('Contact saved:', contactId);
+      return contactId;
+    } catch (error) {
+      console.error('Error saving contact:', error);
+    }
+  };
+
+  saveImportedContact = async (importedContact: ContactModel) => {
+    const savedContactId = await this.saveContact(importedContact);
+    console.log('Imported contact saved with ID:', savedContactId);
+  }
 
   getAllContacts = async (): Promise<ContactModel[]> => {
     await this.ensureDirectory();
