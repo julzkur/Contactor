@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList, Button } from "react-native";
+import { View, FlatList, Button, Alert } from "react-native";
 import ContactCard from "../ContactCard";
 import SearchBar from "../SearchBar";
 import { styles } from "./styles";
 import { ContactService } from "@/app/services/ContactService";
 import { ContactModel } from "@/app/models/contact";
 import ImportButton from "../ImportButton";
+import ResetButton from "../ResetButton";
 
 const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [contacts, setContacts] = useState<ContactModel[]>([]);
@@ -46,14 +47,7 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
     const allContacts = await new ContactService().getAllContacts();
     setContacts(allContacts);
     setFilteredContacts(allContacts); // Reset to show all contacts
-  };
-
-  //FOR DEBUGGING IF U FUCK UP THE CONTACT DIR INTERNALLY ON PHONE
-
-  const handleReset = async () => {
-    await contactService.resetDirectory();
-    console.log("Contacts directory reset.");
-  };
+  }; 
 
   return (
       <View style={styles.container}>
@@ -66,10 +60,7 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
                 <ContactCard contact={item} navigation={navigation} />
               )}
           />
-          <View>
-            <Button title="Reset Contacts Directory" onPress={handleReset} />
-          </View>
-
+          <ResetButton refreshDirectory={refreshContacts}/>
       </View>
   );
 };

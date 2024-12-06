@@ -51,7 +51,7 @@ export class ContactService {
     console.log("Files in directory:", files);
 
     if (files.length === 0) { // No contacts found, return dummy data
-      return dummyContacts;
+      return [];
     }
 
     const contactFiles = files.filter(file => file.endsWith(".json"));

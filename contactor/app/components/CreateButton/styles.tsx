@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: "absolute",
-    bottom: 20, // 20px from the bottom of the container
+    bottom: 50, // 20px from the bottom of the container
     right: 20,  // 20px from the right side of the container
     padding: 0,
     backgroundColor: '#0096c7',
