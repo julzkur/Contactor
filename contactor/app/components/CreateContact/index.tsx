@@ -25,18 +25,6 @@ const CreateContact: React.FC<{ navigation: any }> = ({ navigation }) => {
     }
   };
 
-  const takePhoto = async () => {
-    // Launch camera
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
-      quality: 1,
-    });
-
-    if (!result.canceled) {
-      setPhotoURL(result.assets[0].uri); // Set the captured image URI
-    }
-  };
-
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Name:</Text>
@@ -63,14 +51,9 @@ const CreateContact: React.FC<{ navigation: any }> = ({ navigation }) => {
           <Text>No image selected</Text>
         )}
 
-        <View style={styles.imagePickerButtons}>
-          <TouchableOpacity style={styles.button} onPress={pickImage}>
-            <Text style={styles.buttonText}>Upload</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={takePhoto}>
-            <Text style={styles.buttonText}>Take Photo</Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.button} onPress={pickImage}>
+          <Text style={styles.buttonText}>Upload image</Text>
+        </TouchableOpacity>
       </View>
 
       <TouchableOpacity
