@@ -9,12 +9,15 @@ It supports both iOS and Android platforms.
 
 On start-up, the app displays two Dummy-Contacts that can be used for testing functionality.
 
+This is for iOS/Android, not supported by Web.
+
 
 ## Running the App
 
 #### Prerequisites
 
 Before setting up the project, ensure you have the following installed:
+Ensure you are using correct version of Expo Go, Expo SDK
 
 - Node.js (v.20+)
 - npm (Node Package Manager)
