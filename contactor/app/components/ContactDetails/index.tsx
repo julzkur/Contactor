@@ -9,6 +9,7 @@ import DetailsTextContainer from "@/app/components/DetailsTextCont";
 import { RouteProp } from "@react-navigation/native";
 import { RootStackParamList } from "@/app/routes";
 import Contact from "@/app/models/contact";
+import CallButton from '@/app/components/CallButton';
 
 type ContactScreenRouteProp = RouteProp<RootStackParamList, "Contact">;
 
@@ -38,6 +39,7 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({ route, navigation }) =>
           </View>
           <DetailsTextContainer text={contact.name} />
           <DetailsTextContainer text={contact.phoneNumber} />
+          <CallButton phoneNumber={contact.phoneNumber} />
           <DeleteButton contactId={contact.id} handleDelete={wrappedDelete} navigation={navigation} />
           {/*<EditButton contactId={contact.id} navigation={navigation} />*/}
       </View></>
