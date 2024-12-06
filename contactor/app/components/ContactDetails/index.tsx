@@ -25,10 +25,12 @@ interface ContactDetailsProps {
 
 const ContactDetails: React.FC<ContactDetailsProps> = ({ route, navigation }) => {
 
+  const service = new ContactService();
+
   const { contact, handleDelete } = route.params; 
 
   const wrappedDelete = () => {
-    handleDelete(contact.id); // Call the handleDelete function with the contact ID
+    service.deleteContact(contact.id);
     navigation.goBack();
   };
   
@@ -39,16 +41,11 @@ const ContactDetails: React.FC<ContactDetailsProps> = ({ route, navigation }) =>
           </View>
           <DetailsTextContainer text={contact.name} />
           <DetailsTextContainer text={contact.phoneNumber} />
-<<<<<<< HEAD
           <View style={styles.buttons}>
             <DeleteButton contactId={contact.id} handleDelete={wrappedDelete} navigation={navigation} />
-            <EditButton contactId={contact.id} navigation={navigation} />*/
+            <EditButton contactId={contact.id} navigation={navigation} />
+            <CallButton phoneNumber={contact.phoneNumber} />
           </View>
-=======
-          <CallButton phoneNumber={contact.phoneNumber} />
-          <DeleteButton contactId={contact.id} handleDelete={wrappedDelete} navigation={navigation} />
-          {/*<EditButton contactId={contact.id} navigation={navigation} />*/}
->>>>>>> 0ce107e5093adcdc893ff5866a7cf86489873b35
       </View></>
   )
 }
