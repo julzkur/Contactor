@@ -46,7 +46,7 @@ const DisplayContactList: React.FC<{ navigation: any }> = ({ navigation }) => {
   const refreshContacts = async () => {
     const allContacts = await new ContactService().getAllContacts();
     setContacts(allContacts);
-    setFilteredContacts(allContacts); // Reset to show all contacts
+    setFilteredContacts(allContacts); 
   }; 
 
   return (

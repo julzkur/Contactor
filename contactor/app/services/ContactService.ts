@@ -21,7 +21,7 @@ export class ContactService {
 
   // fun to save dummy data contacts so we have something to test with :))
   async saveContacts(contact: Contact) {
-    const filePath = `${CONTACTS_DIRECTORY}/${contact.id}.json`;
+    const filePath = `${CONTACTS_DIRECTORY}/${contact.name}-${contact.id}.json`;
     await FileSystem.writeAsStringAsync(filePath, JSON.stringify(contact));
   }
 
@@ -50,7 +50,7 @@ export class ContactService {
 
     console.log("Files in directory:", files);
 
-    if (files.length === 0) { // No contacts found, return dummy data
+    if (files.length === 0) { 
       return [];
     }
 
@@ -90,7 +90,7 @@ export class ContactService {
     
     const id = uuidv7();
     const contact = new ContactModel(id, name, phoneNumber, thumbnail);
-    const filename = `${CONTACTS_DIRECTORY}/${id}.json`;
+    const filename = `${CONTACTS_DIRECTORY}/${name}-${id}.json`;
     await FileSystem.writeAsStringAsync(filename, contact.toJson());
     return id;
   }
@@ -98,7 +98,7 @@ export class ContactService {
   // might break
   editContact = async (id: string, name: string, phoneNumber: string, thumbnail: string): Promise<void> => {
     await this.ensureDirectory();
-    const filePath = `${CONTACTS_DIRECTORY}/${id}.json`;
+    const filePath = `${CONTACTS_DIRECTORY}/${name}-${id}.json`;
 
     const updatedContact = new ContactModel(id, name, phoneNumber, thumbnail);
 
